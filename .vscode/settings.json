@@ -1,0 +1,6 @@
+{
+  "jupyter.interactiveWindow.textEditor.executeSelection": true,
+  "jupyter.interactiveWindow.creationMode": "perFile",
+  "jupyter.interactiveWindow.textEditor.autoMoveToNextCell": false,
+  "python.REPL.sendToNativeREPL": false
+}
