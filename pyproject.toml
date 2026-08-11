@@ -9,4 +9,5 @@ dependencies = [
     "groq>=1.6.0",
     "ipykernel>=7.3.0",
     "openai>=2.53.0",
+    "pypdf>=6.15.0",
 ]
