@@ -1,0 +1,245 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/304 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/304 [00:00<01:27,  3.47it/s]
+Loading weights:   4%|3         | 12/304 [00:00<00:13, 21.22it/s]
+Loading weights:   7%|6         | 21/304 [00:01<00:12, 22.88it/s]
+Loading weights:   8%|7         | 24/304 [00:01<00:12, 22.10it/s]
+Loading weights:  10%|9         | 30/304 [00:01<00:13, 19.93it/s]
+Loading weights:  11%|#         | 32/304 [00:01<00:14, 18.60it/s]
+Loading weights:  13%|#2        | 39/304 [00:01<00:13, 20.33it/s]
+Loading weights:  13%|#3        | 41/304 [00:02<00:13, 19.30it/s]
+Loading weights:  16%|#5        | 48/304 [00:02<00:12, 19.92it/s]
+Loading weights:  16%|#6        | 50/304 [00:02<00:13, 19.33it/s]
+Loading weights:  19%|#8        | 57/304 [00:02<00:13, 18.73it/s]
+Loading weights:  21%|##        | 63/304 [00:03<00:10, 23.45it/s]
+Loading weights:  22%|##1       | 66/304 [00:03<00:14, 16.37it/s]
+Loading weights:  23%|##2       | 69/304 [00:03<00:13, 17.96it/s]
+Loading weights:  25%|##4       | 75/304 [00:04<00:15, 15.18it/s]
+Loading weights:  25%|##5       | 77/304 [00:04<00:15, 15.11it/s]
+Loading weights:  27%|##6       | 81/304 [00:04<00:12, 17.57it/s]
+Loading weights:  28%|##7       | 84/304 [00:05<00:21, 10.45it/s]
+Loading weights:  30%|##9       | 90/304 [00:05<00:14, 14.52it/s]
+Loading weights:  31%|###       | 93/304 [00:06<00:30,  6.94it/s]
+Loading weights:  31%|###1      | 95/304 [00:06<00:29,  7.09it/s]
+Loading weights:  34%|###3      | 102/304 [00:08<00:38,  5.22it/s]
+Loading weights:  34%|###4      | 104/304 [00:08<00:35,  5.59it/s]
+Loading weights:  37%|###6      | 111/304 [00:09<00:33,  5.69it/s]
+Loading weights:  37%|###7      | 113/304 [00:10<00:32,  5.97it/s]
+Loading weights:  38%|###8      | 117/304 [00:10<00:23,  8.07it/s]
+Loading weights:  39%|###9      | 120/304 [00:11<00:40,  4.56it/s]
+Loading weights:  40%|####      | 122/304 [00:12<00:40,  4.53it/s]
+Loading weights:  42%|####2     | 129/304 [00:13<00:41,  4.24it/s]
+Loading weights:  43%|####3     | 131/304 [00:14<00:37,  4.67it/s]
+Loading weights:  45%|####5     | 138/304 [00:15<00:37,  4.46it/s]
+Loading weights:  46%|####6     | 140/304 [00:16<00:37,  4.34it/s]
+Loading weights:  48%|####8     | 147/304 [00:18<00:41,  3.77it/s]
+Loading weights:  49%|####8     | 148/304 [00:18<00:39,  3.92it/s]
+Loading weights:  51%|#####1    | 156/304 [00:20<00:38,  3.86it/s]
+Loading weights:  52%|#####1    | 158/304 [00:27<01:47,  1.36it/s]
+Loading weights:  54%|#####4    | 165/304 [00:28<01:03,  2.17it/s]
+Loading weights:  55%|#####4    | 166/304 [00:28<01:01,  2.25it/s]
+Loading weights:  56%|#####6    | 171/304 [00:28<00:40,  3.31it/s]
+Loading weights:  57%|#####7    | 174/304 [00:30<00:46,  2.79it/s]
+Loading weights:  58%|#####7    | 176/304 [00:30<00:40,  3.20it/s]
+Loading weights:  60%|######    | 183/304 [00:32<00:32,  3.68it/s]
+Loading weights:  61%|######    | 184/304 [00:32<00:32,  3.65it/s]
+Loading weights:  61%|######    | 185/304 [00:33<00:41,  2.85it/s]
+Loading weights:  63%|######3   | 192/304 [00:35<00:36,  3.10it/s]
+Loading weights:  65%|######5   | 199/304 [00:35<00:20,  5.03it/s]
+Loading weights:  66%|######6   | 201/304 [00:40<00:51,  2.01it/s]
+Loading weights:  68%|######8   | 208/304 [00:40<00:29,  3.25it/s]
+Loading weights:  69%|######9   | 210/304 [00:43<00:43,  2.17it/s]
+Loading weights:  72%|#######2  | 219/304 [00:45<00:31,  2.67it/s]
+Loading weights:  72%|#######2  | 220/304 [00:46<00:30,  2.76it/s]
+Loading weights:  75%|#######5  | 228/304 [00:48<00:26,  2.90it/s]
+Loading weights:  77%|#######6  | 234/304 [00:50<00:22,  3.13it/s]
+Loading weights:  78%|#######7  | 237/304 [00:51<00:22,  2.96it/s]
+Loading weights:  78%|#######8  | 238/304 [00:51<00:21,  3.10it/s]
+Loading weights:  79%|#######8  | 239/304 [00:53<00:33,  1.93it/s]
+Loading weights:  79%|#######8  | 240/304 [00:53<00:29,  2.16it/s]
+Loading weights:  79%|#######9  | 241/304 [00:54<00:26,  2.41it/s]
+Loading weights:  81%|########  | 246/304 [00:56<00:29,  1.99it/s]
+Loading weights:  81%|########1 | 247/304 [00:57<00:25,  2.22it/s]
+Loading weights:  83%|########2 | 252/304 [01:10<01:20,  1.56s/it]
+Loading weights:  84%|########3 | 254/304 [01:10<01:01,  1.23s/it]
+Loading weights:  84%|########3 | 255/304 [01:12<00:59,  1.22s/it]
+Loading weights:  84%|########4 | 256/304 [01:12<00:52,  1.09s/it]
+Loading weights:  85%|########4 | 257/304 [01:17<01:23,  1.78s/it]
+Loading weights:  85%|########4 | 258/304 [01:17<01:06,  1.45s/it]
+Loading weights:  87%|########6 | 264/304 [01:19<00:30,  1.29it/s]
+Loading weights:  87%|########7 | 265/304 [01:20<00:27,  1.42it/s]
+Loading weights:  88%|########8 | 269/304 [01:21<00:20,  1.69it/s]
+Loading weights:  89%|########8 | 270/304 [01:22<00:18,  1.88it/s]
+Loading weights:  90%|########9 | 273/304 [01:25<00:22,  1.41it/s]
+Loading weights:  92%|#########1| 279/304 [01:25<00:09,  2.57it/s]
+Loading weights:  93%|#########2| 282/304 [01:31<00:17,  1.25it/s]
+Loading weights:  93%|#########3| 283/304 [01:31<00:15,  1.37it/s]
+Loading weights: 100%|##########| 304/304 [01:31<00:00,  3.32it/s]
+
+Loading weights:   0%|          | 0/304 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/304 [00:01<09:30,  1.88s/it]
+Loading weights:   4%|4         | 13/304 [00:02<00:35,  8.19it/s]
+Loading weights:   6%|5         | 17/304 [00:02<00:29,  9.87it/s]
+Loading weights:   7%|6         | 21/304 [00:02<00:34,  8.26it/s]
+Loading weights:   8%|7         | 23/304 [00:03<00:36,  7.62it/s]
+Loading weights:  10%|9         | 30/304 [00:03<00:29,  9.14it/s]
+Loading weights:  11%|#         | 32/304 [00:04<00:32,  8.31it/s]
+Loading weights:  13%|#2        | 39/304 [00:04<00:26,  9.90it/s]
+Loading weights:  15%|#4        | 45/304 [00:05<00:20, 12.42it/s]
+Loading weights:  16%|#5        | 48/304 [00:05<00:22, 11.26it/s]
+Loading weights:  16%|#6        | 50/304 [00:05<00:23, 10.67it/s]
+Loading weights:  19%|#8        | 57/304 [00:06<00:24, 10.19it/s]
+Loading weights:  19%|#9        | 59/304 [00:06<00:23, 10.34it/s]
+Loading weights:  22%|##1       | 66/304 [00:07<00:23,  9.95it/s]
+Loading weights:  24%|##4       | 73/304 [00:07<00:16, 13.97it/s]
+Loading weights:  25%|##4       | 75/304 [00:08<00:22,  9.97it/s]
+Loading weights:  25%|##5       | 77/304 [00:08<00:21, 10.50it/s]
+Loading weights:  28%|##7       | 84/304 [00:08<00:20, 10.64it/s]
+Loading weights:  28%|##8       | 86/304 [00:09<00:19, 11.05it/s]
+Loading weights:  31%|###       | 93/304 [00:09<00:19, 11.09it/s]
+Loading weights:  31%|###1      | 95/304 [00:09<00:17, 11.64it/s]
+Loading weights:  34%|###3      | 102/304 [00:13<00:58,  3.46it/s]
+Loading weights:  36%|###5      | 108/304 [00:14<00:45,  4.31it/s]
+Loading weights:  42%|####2     | 129/304 [00:15<00:18,  9.51it/s]
+Loading weights:  45%|####5     | 138/304 [00:16<00:18,  9.00it/s]
+Loading weights:  46%|####6     | 140/304 [00:17<00:26,  6.18it/s]
+Loading weights:  51%|#####1    | 156/304 [00:19<00:18,  7.86it/s]
+Loading weights:  54%|#####3    | 163/304 [00:19<00:14,  9.76it/s]
+Loading weights:  55%|#####4    | 166/304 [00:21<00:24,  5.67it/s]
+Loading weights:  57%|#####7    | 174/304 [00:24<00:29,  4.38it/s]
+Loading weights:  58%|#####7    | 176/304 [00:27<00:49,  2.61it/s]
+Loading weights:  60%|######    | 183/304 [00:28<00:36,  3.33it/s]
+Loading weights:  61%|######    | 184/304 [00:29<00:38,  3.10it/s]
+Loading weights:  63%|######3   | 192/304 [00:29<00:23,  4.76it/s]
+Loading weights:  63%|######3   | 193/304 [00:29<00:23,  4.81it/s]
+Loading weights:  65%|######5   | 199/304 [00:30<00:20,  5.09it/s]
+Loading weights:  66%|######6   | 201/304 [00:33<00:40,  2.55it/s]
+Loading weights:  68%|######8   | 208/304 [00:34<00:23,  4.13it/s]
+Loading weights:  69%|######9   | 210/304 [00:36<00:38,  2.46it/s]
+Loading weights:  71%|#######1  | 217/304 [00:38<00:27,  3.16it/s]
+Loading weights:  72%|#######1  | 218/304 [00:38<00:27,  3.15it/s]
+Loading weights:  72%|#######2  | 219/304 [00:41<00:52,  1.63it/s]
+Loading weights:  72%|#######2  | 220/304 [00:42<00:49,  1.68it/s]
+Loading weights:  75%|#######5  | 228/304 [00:49<00:58,  1.30it/s]
+Loading weights:  75%|#######5  | 229/304 [00:49<00:54,  1.39it/s]
+Loading weights:  78%|#######7  | 237/304 [00:55<00:49,  1.34it/s]
+Loading weights:  78%|#######8  | 238/304 [00:55<00:46,  1.43it/s]
+Loading weights:  80%|########  | 244/304 [00:56<00:27,  2.21it/s]
+Loading weights:  81%|########  | 245/304 [00:57<00:27,  2.17it/s]
+Loading weights:  81%|########  | 246/304 [01:03<01:08,  1.18s/it]
+Loading weights:  81%|########1 | 247/304 [01:03<00:59,  1.04s/it]
+Loading weights:  83%|########2 | 252/304 [01:05<00:35,  1.48it/s]
+Loading weights:  84%|########3 | 255/304 [01:07<00:30,  1.62it/s]
+Loading weights:  84%|########4 | 256/304 [01:07<00:29,  1.63it/s]
+Loading weights:  85%|########4 | 257/304 [01:09<00:35,  1.33it/s]
+Loading weights:  85%|########5 | 259/304 [01:09<00:24,  1.82it/s]
+Loading weights:  87%|########6 | 263/304 [01:09<00:13,  3.03it/s]
+Loading weights:  87%|########6 | 264/304 [01:15<00:45,  1.13s/it]
+Loading weights:  87%|########7 | 265/304 [01:15<00:38,  1.02it/s]
+Loading weights:  90%|########9 | 273/304 [01:21<00:25,  1.20it/s]
+Loading weights:  90%|######### | 274/304 [01:22<00:24,  1.24it/s]
+Loading weights:  93%|#########2| 282/304 [01:28<00:16,  1.31it/s]
+Loading weights:  93%|#########3| 283/304 [01:28<00:15,  1.39it/s]
+Loading weights:  96%|#########5| 291/304 [01:28<00:04,  2.73it/s]
+Loading weights: 100%|##########| 304/304 [01:28<00:00,  5.76it/s]
+Loading weights: 100%|##########| 304/304 [01:28<00:00,  3.42it/s]
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    from lancedb.embeddings import get_registry; f=get_registry().get('sentence-transformers').create(name='nvidia/NV-Embed-v2', trust_remote_code=True); print('dims', f.ndims())
+                                                                                                                                                                        ~~~~~~~^^
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\lancedb\embeddings\sentence_transformers.py", line 54, in ndims
+    self._ndims = len(self.generate_embeddings("foo")[0])
+                      ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\lancedb\embeddings\sentence_transformers.py", line 68, in generate_embeddings
+    return self.embedding_model.encode(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\pydantic\main.py", line 1039, in __getattr__
+    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\lancedb\embeddings\sentence_transformers.py", line 50, in embedding_model
+    return self.get_embedding_model()
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\lancedb\embeddings\utils.py", line 231, in inner
+    return _func(weakref.ref(self), *args, **kwargs)
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\lancedb\embeddings\utils.py", line 227, in _func
+    return func(_self(), *args, **kwargs)
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\lancedb\embeddings\sentence_transformers.py", line 86, in get_embedding_model
+    return sentence_transformers.SentenceTransformer(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.name, device=self.device, trust_remote_code=self.trust_remote_code
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\sentence_transformers\util\decorators.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\sentence_transformers\sentence_transformer\model.py", line 188, in __init__
+    super().__init__(
+    ~~~~~~~~~~~~~~~~^
+        model_name_or_path=model_name_or_path,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<13 lines>...
+        default_prompt_name=default_prompt_name,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 222, in __init__
+    modules, self.module_kwargs = self._load_modules(
+                                  ~~~~~~~~~~~~~~~~~~^
+        model_name_or_path,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        config_kwargs=config_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 1023, in _load_modules
+    return self._load_config_modules(model_name_or_path, **load_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 1229, in _load_config_modules
+    module = module_class.load(
+        model_name_or_path,
+    ...<11 lines>...
+        backend=self.backend,
+    )
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 2130, in load
+    return cls(model_name_or_path=model_name_or_path, **init_kwargs)
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\sentence_transformers\util\decorators.py", line 87, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 654, in __init__
+    self.model = self._load_model(
+                 ~~~~~~~~~~~~~~~~^
+        model_name_or_path, transformer_task, config, backend, is_peft_model, **model_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 1836, in _load_model
+    return model_cls.from_pretrained(model_name_or_path, config=config, **model_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\transformers\models\auto\auto_factory.py", line 402, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\transformers\modeling_utils.py", line 4349, in from_pretrained
+    loading_info = cls._finalize_model_loading(model, load_config, loading_info)
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\transformers\modeling_utils.py", line 4509, in _finalize_model_loading
+    model._move_missing_keys_from_meta_to_device(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        loading_info.missing_and_mismatched(),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        load_config.hf_quantizer,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\transformers\modeling_utils.py", line 4756, in _move_missing_keys_from_meta_to_device
+    for key in missing_keys - self.all_tied_weights_keys.keys():
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rupam.pal\OneDrive - Euromonitor International\Personal Projects\ai-cookbook\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1967, in __getattr__
+    raise AttributeError(
+        f"'{type(self).__name__}' object has no attribute '{name}'"
+    )
+AttributeError: 'NVEmbedModel' object has no attribute 'all_tied_weights_keys'. Did you mean: '_tied_weights_keys'?
