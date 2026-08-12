@@ -117,12 +117,18 @@ import lancedb
 from lancedb.embeddings import get_registry
 from lancedb.pydantic import LanceModel, Vector
 
-func = get_registry().get("huggingface").create(name="nvidia/NV-Embed-v2", trust_remote_code=True)
+func = (
+    get_registry()
+    .get("huggingface")
+    .create(name="nvidia/NV-Embed-v2", trust_remote_code=True)
+)
+
 
 class Chunks(LanceModel):
     text: str = func.SourceField()
     vector: Vector(func.ndims()) = func.VectorField()
     metadata: ChunkMetadata
+
 
 table = db.create_table("docling", schema=Chunks, mode="overwrite")
 table.add(processed_chunks)  # embeddings generated automatically
