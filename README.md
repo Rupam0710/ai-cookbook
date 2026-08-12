@@ -1,54 +1,142 @@
-# ai-cookbook
+# AI Cookbook
+
+A collection of hands-on AI engineering recipes covering LLM APIs, RAG pipelines, document extraction, and conversational AI — built with Python.
 
 ---
 
-# OpenAI Responses API
+## Repository Structure
 
-## What we will cover
+```
+ai-cookbook/
+├── models/
+│   └── responses/          # OpenAI Responses API examples (01–08)
+└── knowledge/
+    └── docling/            # Knowledge extraction & RAG pipeline (1–5)
+```
 
-1. Introduction
-2. Text prompting
-3. Conversation states
-4. Function calling
-5. Structured output
-6. Web search
-7. Reasoning
-8. File search
+---
 
-## Most important things to know
+## 1. OpenAI Responses API
 
-1. **Backward Compatibility**: The Responses API is a superset of Chat Completions - everything you can do with Chat Completions can be done with Responses API, plus additional features.
-2. **Migration Timeline**: The Chat Completions API is not being deprecated and will continue to be supported indefinitely as an industry standard for building AI applications, while the Assistants API (not Chat Completions) is the one planned for eventual deprecation in 2026.
-3. **Key New Features**:
+> **Location:** `models/responses/`
 
-   - Simplified interface for different interaction types
-   - Native support for web search capabilities
-   - A new `developer` role you can use
-   - Improved support for reasoning models
-   - Built-in file/vector search functionality
-   - Simplified conversation state management
+A progressive walkthrough of the OpenAI Responses API — from basic text prompting through to reasoning, file search, and web-grounded responses.
 
-4. **Available Tools**:
+### Topics Covered
 
-   - **Web search**: Include data from the Internet in model response generation
-   - **File search**: Search the contents of uploaded files for context when generating a response
-   - **Computer use**: Create agentic workflows that enable a model to control a computer interface
-   - **Function calling**: Enable the model to call custom code that you define, giving it access to additional data and capabilities
+| File | Topic |
+|------|-------|
+| `01-introduction.py` | Responses API vs Chat Completions, image input, streaming |
+| `02-text-prompting.py` | System/user roles, prompt engineering basics |
+| `03-conversation-state.py` | Multi-turn conversation and state management |
+| `04-function-calling.py` | Defining and invoking custom tools/functions |
+| `05-structured-output.py` | JSON schema-constrained model output |
+| `06-web-search.py` | Grounding responses with live web search |
+| `07-file-search.py` | Querying uploaded files / vector stores |
+| `08-reasoning.py` | Working with o-series reasoning models |
 
-5. **When to Migrate**:
+### Key Concepts
 
-   - For new applications: Start with Responses API to be future-proof
-   - For existing applications: Begin planning migration, but no immediate urgency
-   - Test the new API in parallel with existing implementations
+- **Backward Compatibility** — The Responses API is a superset of Chat Completions. Everything possible with Chat Completions works with Responses API, plus additional features.
+- **Built-in Tools** — Web search, file search, computer use, and function calling are all first-class citizens.
+- **Simplified State** — Conversation state management that previously required manual message list wrangling is now handled natively.
+- **Reasoning Models** — Improved support for o-series models with dedicated reasoning configuration.
 
-6. **Implementation Considerations**:
+### Resources
 
-   - API structure changes but core AI engineering principles remain the same
-   - Features that previously required multiple API calls can now be done in single calls
-   - The fundamental patterns of retrieval, tools, and memory management still apply
+- [Responses API Docs](https://platform.openai.com/docs/api-reference/responses)
+- [OpenAI Agents SDK](https://platform.openai.com/docs/guides/agents)
 
-7. **New Agent SDK**: OpenAI has released a new Agent SDK that will replace [Swarm](https://github.com/openai/swarm/tree/main). This provides a standardized way to build AI agents with the Responses API. Learn more at: [https://platform.openai.com/docs/guides/agents](https://platform.openai.com/docs/guides/agents)
+---
 
-8. **Documentation Resources**:
+## 2. Knowledge Extraction Pipeline with Docling
 
-   - Official OpenAI documentation: [https://platform.openai.com/docs/api-reference/responses](https://platform.openai.com/docs/api-reference/responses)
+> **Location:** `knowledge/docling/`
+
+A full end-to-end RAG (Retrieval-Augmented Generation) pipeline that extracts knowledge from PDFs and websites, chunks and embeds content into a vector database, and serves it via a streaming chat interface.
+
+### Pipeline
+
+```
+PDF / HTML / Web
+      │
+      ▼
+ 1-extraction.py     →  Docling DocumentConverter
+      │
+      ▼
+ 2-chunking.py       →  HybridChunker + NVIDIA Nemotron tokenizer
+      │
+      ▼
+ 3-embeddings.py     →  NVIDIA NV-Embed-v2 → LanceDB vector store
+      │
+      ▼
+ 4-search.py         →  LanceDB vector similarity search
+      │
+      ▼
+ 5-chat.py           →  Streamlit + NVIDIA Nemotron 70B (RAG chat)
+```
+
+### Steps
+
+| File | Tool / Model | What it does |
+|------|-------------|--------------|
+| `1-extraction.py` | `docling.DocumentConverter` | Converts PDFs and web pages to structured Markdown/JSON |
+| `2-chunking.py` | `HybridChunker`, Nemotron tokenizer | Splits documents into semantically coherent, token-bounded chunks |
+| `3-embeddings.py` | `nvidia/NV-Embed-v2`, LanceDB | Embeds chunks and stores them in a local vector database |
+| `4-search.py` | LanceDB vector search | Verifies retrieval quality with natural language queries |
+| `5-chat.py` | Streamlit, NVIDIA NIM | Full RAG chat app with source citations and streaming |
+
+### Tech Stack
+
+| Tool | Role |
+|------|------|
+| [Docling](https://github.com/DS4SD/docling) | PDF/HTML/web document parsing |
+| `HybridChunker` | Layout-aware + token-aware chunking |
+| `nvidia/NV-Embed-v2` | Text embeddings |
+| [LanceDB](https://lancedb.github.io/lancedb/) | Local serverless vector database |
+| [NVIDIA NIM](https://build.nvidia.com) | Hosted `llama-3.1-nemotron-70b-instruct` inference |
+| [Streamlit](https://streamlit.io) | Chat UI |
+
+See [`knowledge/docling/README.md`](knowledge/docling/README.md) for full setup and usage instructions.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Python ≥ 3.13
+- API keys for OpenAI and/or NVIDIA NIM
+
+### Install
+
+```bash
+pip install -e .
+```
+
+### Environment
+
+Create a `.env` file in the relevant subfolder:
+
+```env
+# For models/responses/
+OPENAI_API_KEY=sk-...
+
+# For knowledge/docling/
+NVIDIA_API_KEY=nvapi-...
+```
+
+---
+
+## Dependencies
+
+| Package | Used by |
+|---------|---------|
+| `openai` | Responses API examples |
+| `groq` | Alternative LLM provider |
+| `docling` / `docling-core` | Document extraction & chunking |
+| `lancedb` | Vector database |
+| `transformers` | Tokenizers and embedding models |
+| `streamlit` | Chat UI |
+| `python-dotenv` | Environment variable loading |
+| `pypdf` | PDF utilities |
