@@ -81,7 +81,11 @@ def classify_task_complexity(task: str) -> str:
     single_call_keywords = ["summarise", "classify", "translate", "explain", "what is"]
 
     # Workflow: multi-step but predictable
-    workflow_keywords = ["generate then review", "outline then write", "extract then format"]
+    workflow_keywords = [
+        "generate then review",
+        "outline then write",
+        "extract then format",
+    ]
 
     # Agent: open-ended, unpredictable steps
     agent_keywords = ["research", "debug", "autonomously", "figure out", "investigate"]
@@ -98,9 +102,9 @@ def classify_task_complexity(task: str) -> str:
         return "single_llm_call"  # default: start simple
 
 
-print(classify_task_complexity("Summarise this document"))       # single_llm_call
-print(classify_task_complexity("Research and debug this issue")) # agent
-print(classify_task_complexity("Generate then review the copy")) # workflow
+print(classify_task_complexity("Summarise this document"))  # single_llm_call
+print(classify_task_complexity("Research and debug this issue"))  # agent
+print(classify_task_complexity("Generate then review the copy"))  # workflow
 ```
 
 ---
@@ -136,6 +140,7 @@ from anthropic import Anthropic
 
 client = Anthropic()
 
+
 def call_llm(prompt: str, system: str = "") -> str:
     response = client.messages.create(
         model="claude-sonnet-4-5",
@@ -149,7 +154,7 @@ def call_llm(prompt: str, system: str = "") -> str:
 # Usage
 result = call_llm(
     prompt="What is the capital of France?",
-    system="You are a helpful geography assistant."
+    system="You are a helpful geography assistant.",
 )
 print(result)
 ```
@@ -201,7 +206,11 @@ tools = [
             "type": "object",
             "properties": {
                 "query": {"type": "string", "description": "The search query"},
-                "max_results": {"type": "integer", "description": "Number of results to return", "default": 3},
+                "max_results": {
+                    "type": "integer",
+                    "description": "Number of results to return",
+                    "default": 3,
+                },
             },
             "required": ["query"],
         },
@@ -216,11 +225,14 @@ tools = [
 
 def search_knowledge_base(query: str, max_results: int = 3) -> list:
     """Simulated knowledge base search."""
-    return [{"title": f"Doc about {query}", "content": f"Content relevant to {query}"}] * max_results
+    return [
+        {"title": f"Doc about {query}", "content": f"Content relevant to {query}"}
+    ] * max_results
 
 
 def get_current_date() -> str:
     from datetime import date
+
     return str(date.today())
 
 
@@ -249,11 +261,13 @@ def run_augmented_llm(user_message: str) -> str:
                 else:
                     result = "Tool not found"
 
-                tool_results.append({
-                    "type": "tool_result",
-                    "tool_use_id": block.id,
-                    "content": json.dumps(result),
-                })
+                tool_results.append(
+                    {
+                        "type": "tool_result",
+                        "tool_use_id": block.id,
+                        "content": json.dumps(result),
+                    }
+                )
 
         messages.append({"role": "assistant", "content": response.content})
         messages.append({"role": "user", "content": tool_results})
@@ -493,7 +507,13 @@ async def analyse_aspect(document: str, aspect: str) -> dict:
 
 async def parallel_document_review(document: str) -> dict:
     """Run all analyses in parallel."""
-    aspects = ["tone and style", "factual accuracy", "logical structure", "readability", "key risks"]
+    aspects = [
+        "tone and style",
+        "factual accuracy",
+        "logical structure",
+        "readability",
+        "key risks",
+    ]
 
     # Fire all requests simultaneously
     tasks = [analyse_aspect(document, aspect) for aspect in aspects]
@@ -505,12 +525,15 @@ async def parallel_document_review(document: str) -> dict:
 # Voting example
 async def vote_on_content(content: str, question: str, n_votes: int = 3) -> str:
     """Run same evaluation multiple times and take majority vote."""
+
     async def single_vote(_):
         r = await client.messages.create(
             model="claude-haiku-4-5",
             max_tokens=5,
             system="Answer with only YES or NO.",
-            messages=[{"role": "user", "content": f"{question}\n\nContent:\n{content}"}],
+            messages=[
+                {"role": "user", "content": f"{question}\n\nContent:\n{content}"}
+            ],
         )
         return "YES" in r.content[0].text.upper()
 
@@ -529,7 +552,9 @@ async def main():
         print(f"\n{aspect.upper()}:\n{result}")
 
     print("\n=== Voting ===")
-    verdict = await vote_on_content(doc, "Is this content suitable for a professional audience?")
+    verdict = await vote_on_content(
+        doc, "Is this content suitable for a professional audience?"
+    )
     print(f"Verdict: {verdict}")
 
 
@@ -593,10 +618,12 @@ def orchestrator_research(main_topic: str) -> str:
         model="claude-sonnet-4-5",
         max_tokens=512,
         system="You are a research orchestrator. Break down research topics into subtopics.",
-        messages=[{
-            "role": "user",
-            "content": f"Break down this research topic into 3-4 specific subtopics to investigate:\n\nTopic: {main_topic}\n\nRespond with a JSON array of subtopic strings only.",
-        }],
+        messages=[
+            {
+                "role": "user",
+                "content": f"Break down this research topic into 3-4 specific subtopics to investigate:\n\nTopic: {main_topic}\n\nRespond with a JSON array of subtopic strings only.",
+            }
+        ],
     )
 
     subtopics = json.loads(plan_response.content[0].text)
@@ -614,16 +641,20 @@ def orchestrator_research(main_topic: str) -> str:
         model="claude-sonnet-4-5",
         max_tokens=1024,
         system="You are an expert analyst. Synthesise research findings into a coherent summary.",
-        messages=[{
-            "role": "user",
-            "content": f"Synthesise these research findings on '{main_topic}':\n\n{results_text}",
-        }],
+        messages=[
+            {
+                "role": "user",
+                "content": f"Synthesise these research findings on '{main_topic}':\n\n{results_text}",
+            }
+        ],
     )
 
     return synthesis.content[0].text
 
 
-result = orchestrator_research("The impact of large language models on software development")
+result = orchestrator_research(
+    "The impact of large language models on software development"
+)
 print("\n=== FINAL SYNTHESIS ===")
 print(result)
 ```
@@ -685,16 +716,21 @@ def evaluator(code: str, criteria: list[str]) -> dict:
         model="claude-sonnet-4-5",
         max_tokens=512,
         system="You are a strict code reviewer. Evaluate code against specific criteria.",
-        messages=[{
-            "role": "user",
-            "content": f"Evaluate this code against these criteria:\n{criteria_text}\n\nCode:\n{code}\n\nRespond with JSON: {{\"passes\": true/false, \"feedback\": \"...\", \"score\": 1-10}}",
-        }],
+        messages=[
+            {
+                "role": "user",
+                "content": f'Evaluate this code against these criteria:\n{criteria_text}\n\nCode:\n{code}\n\nRespond with JSON: {{"passes": true/false, "feedback": "...", "score": 1-10}}',
+            }
+        ],
     )
     import json
+
     return json.loads(r.content[0].text)
 
 
-def evaluator_optimizer_loop(task: str, criteria: list[str], max_iterations: int = 3) -> str:
+def evaluator_optimizer_loop(
+    task: str, criteria: list[str], max_iterations: int = 3
+) -> str:
     feedback = ""
     for i in range(max_iterations):
         print(f"\n🔄 Iteration {i + 1}/{max_iterations}")
@@ -790,7 +826,9 @@ tools = [
         "description": "Read the contents of a file at the given absolute path.",
         "input_schema": {
             "type": "object",
-            "properties": {"path": {"type": "string", "description": "Absolute file path"}},
+            "properties": {
+                "path": {"type": "string", "description": "Absolute file path"}
+            },
             "required": ["path"],
         },
     },
@@ -799,7 +837,9 @@ tools = [
         "description": "List all files and folders in a directory.",
         "input_schema": {
             "type": "object",
-            "properties": {"path": {"type": "string", "description": "Absolute directory path"}},
+            "properties": {
+                "path": {"type": "string", "description": "Absolute directory path"}
+            },
             "required": ["path"],
         },
     },
@@ -854,7 +894,9 @@ def run_agent(task: str, max_iterations: int = 10) -> str:
         )
 
         if response.stop_reason == "end_turn":
-            final = next((b.text for b in response.content if hasattr(b, "text")), "Done.")
+            final = next(
+                (b.text for b in response.content if hasattr(b, "text")), "Done."
+            )
             print(f"✅ Agent completed: {final}")
             return final
 
@@ -865,11 +907,13 @@ def run_agent(task: str, max_iterations: int = 10) -> str:
                 print(f"  🔧 Tool: {block.name}({block.input})")
                 result = execute_tool(block.name, block.input)
                 print(f"  📤 Result: {result[:80]}...")
-                tool_results.append({
-                    "type": "tool_result",
-                    "tool_use_id": block.id,
-                    "content": result,
-                })
+                tool_results.append(
+                    {
+                        "type": "tool_result",
+                        "tool_use_id": block.id,
+                        "content": result,
+                    }
+                )
 
         messages.append({"role": "assistant", "content": response.content})
         messages.append({"role": "user", "content": tool_results})
