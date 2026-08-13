@@ -1,6 +1,8 @@
 # AI Cookbook
 
-A collection of hands-on AI engineering recipes covering LLM APIs, RAG pipelines, document extraction, and conversational AI — built with Python.
+**AI Cookbook** is a practical, code-first learning repository for AI engineers and developers. It provides self-contained, runnable recipes that demonstrate how to build real-world AI applications — from querying large language models to constructing full retrieval-augmented generation (RAG) pipelines and designing autonomous agents.
+
+Each recipe is structured progressively: starting with the fundamentals and building toward production-ready patterns.
 
 ---
 
@@ -9,9 +11,10 @@ A collection of hands-on AI engineering recipes covering LLM APIs, RAG pipelines
 ```
 ai-cookbook/
 ├── models/
-│   └── responses/          # OpenAI Responses API examples (01–08)
-└── knowledge/
-    └── docling/            # Knowledge extraction & RAG pipeline (1–5)
+│   └── responses/              # OpenAI Responses API examples (01–08)
+├── knowledge/
+│   └── docling/                # Knowledge extraction & RAG pipeline (1–5)
+└── building_effective_agents/  # Agentic patterns guide (Anthropic)
 ```
 
 ---
@@ -101,6 +104,38 @@ See [`knowledge/docling/README.md`](knowledge/docling/README.md) for full setup 
 
 ---
 
+## 3. Building Effective Agents
+
+> **Location:** `building_effective_agents/`  
+> Based on [Anthropic's engineering guide](https://www.anthropic.com/engineering/building-effective-agents)
+
+A comprehensive reference guide covering every agentic pattern used in production LLM systems — with Mermaid diagrams and runnable Python examples for each pattern.
+
+### Patterns Covered
+
+| Pattern | Description | When to use |
+|---------|-------------|-------------|
+| **Augmented LLM** | LLM + retrieval + tools + memory | Foundation of all agentic systems |
+| **Prompt Chaining** | Sequential steps with gate checks | Fixed, decomposable tasks |
+| **Routing** | Classify input → specialist handler | Distinct input categories |
+| **Parallelization** | Simultaneous independent subtasks | Speed or confidence via voting |
+| **Orchestrator-Workers** | Central LLM delegates dynamically | Unpredictable subtasks |
+| **Evaluator-Optimizer** | Generate → evaluate → refine loop | Quality-critical outputs |
+| **Autonomous Agents** | LLM in a tool-use loop | Open-ended, multi-step tasks |
+
+### Decision Guide
+
+```
+Start simple → add complexity only when needed
+
+Single LLM call → Prompt Chain → Routing → Parallelization
+→ Orchestrator-Workers → Evaluator-Optimizer → Autonomous Agent
+```
+
+See [`building_effective_agents/README.md`](building_effective_agents/README.md) for the full guide with diagrams and code examples.
+
+---
+
 ## Getting Started
 
 ### Prerequisites
@@ -132,7 +167,8 @@ NVIDIA_API_KEY=nvapi-...
 
 | Package | Used by |
 |---------|---------|
-| `openai` | Responses API examples |
+| `openai` | Responses API examples, agent patterns |
+| `anthropic` | Building effective agents examples |
 | `groq` | Alternative LLM provider |
 | `docling` / `docling-core` | Document extraction & chunking |
 | `lancedb` | Vector database |
