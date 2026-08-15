@@ -14,6 +14,8 @@ ai-cookbook/
 │   └── responses/              # OpenAI Responses API examples (01–08)
 ├── knowledge/
 │   └── docling/                # Knowledge extraction & RAG pipeline (1–5)
+├── agents/
+│   └── building-blocks/        # 7 building blocks for reliable AI agents (1–7)
 └── building_effective_agents/  # Agentic patterns guide (Anthropic)
 ```
 
@@ -133,6 +135,42 @@ Single LLM call → Prompt Chain → Routing → Parallelization
 ```
 
 See [`building_effective_agents/README.md`](building_effective_agents/README.md) for the full guide with diagrams and code examples.
+
+---
+
+## 4. 7 Building Blocks for Reliable AI Agents
+
+> **Location:** `agents/building-blocks/`
+
+Seven self-contained Python scripts, each demonstrating one essential building block that every production AI agent needs. Each file is runnable independently.
+
+### The Building Blocks
+
+| # | Block | File | What it does |
+|---|-------|------|--------------|
+| 1 | 🧠 Intelligence | `1-intelligence.py` | LLM processes input and generates a response |
+| 2 | 💾 Memory | `2-memory.py` | Pass full chat history to maintain context across turns |
+| 3 | 🔧 Tools | `3-tools.py` | LLM calls your functions to act in the real world |
+| 4 | ✅ Validation | `4-validation.py` | Pydantic schema enforces structured, typed output |
+| 5 | 🔀 Control | `5-control.py` | If/then routing based on classified user intent |
+| 6 | 🛡️ Recovery | `6-recovery.py` | Try/except + fallbacks for graceful failure handling |
+| 7 | 👤 Feedback | `7-feedback.py` | Human approval gate for high-stakes actions |
+
+### How they connect
+
+```
+User Input
+   → 🧠 Intelligence  (understands the task)
+   → 💾 Memory        (retrieves past context)
+   → 🔧 Tools         (calls external APIs)
+   → ✅ Validation    (ensures correct output format)
+   → 🔀 Control       (routes to the right handler)
+   → 🛡️ Recovery      (handles errors & edge cases)
+   → 👤 Feedback      (human approves if needed)
+   → Response
+```
+
+See [`agents/building-blocks/README.md`](agents/building-blocks/README.md) for diagrams and full explanations.
 
 ---
 
