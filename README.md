@@ -16,6 +16,8 @@ ai-cookbook/
 │   └── docling/                # Knowledge extraction & RAG pipeline (1–5)
 ├── agents/
 │   └── building-blocks/        # 7 building blocks for reliable AI agents (1–7)
+├── patterns/
+│   └── workflows/              # LLM workflow patterns — intro + 4 patterns (1–4)
 └── building_effective_agents/  # Agentic patterns guide (Anthropic)
 ```
 
@@ -171,6 +173,46 @@ User Input
 ```
 
 See [`agents/building-blocks/README.md`](agents/building-blocks/README.md) for diagrams and full explanations.
+
+---
+
+## 5. LLM Workflow Patterns
+
+> **Location:** `patterns/workflows/`
+
+A hands-on guide to the most common LLM workflow patterns, built progressively from a single API call up to a full orchestrator-workers system.
+
+### Part 1 — Core Building Blocks
+
+| File | What it covers |
+|------|----------------|
+| `1-introduction/1-basic.py` | Plain text completion — the simplest LLM call |
+| `1-introduction/2-structurred.py` | Pydantic structured output — typed, validated responses |
+| `1-introduction/3-tools.py` | Function calling — LLM triggers your Python functions |
+| `1-introduction/4-retrieval.py` | RAG — LLM answers from your private knowledge base |
+
+### Part 2 — Workflow Patterns
+
+| Pattern | File | When to use |
+|---------|------|-------------|
+| **Prompt Chaining** | `2-workflow-patterns/1-prompt-chaining.py` | Fixed multi-step task with quality gate checks |
+| **Routing** | `2-workflow-patterns/2-routing.py` | Different input types need different specialised handlers |
+| **Parallelization** | `2-workflow-patterns/3-parallization.py` | Independent checks that run simultaneously |
+| **Orchestrator-Workers** | `2-workflow-patterns/4-orchestrator.py` | Dynamic tasks where number of steps is unknown |
+
+### How complexity grows
+
+```
+Basic → Structured → Tools/Retrieval
+                         │
+              ┌──────────┼──────────┐
+         Chaining    Routing   Parallelization
+              └──────────┼──────────┘
+                         │
+                Orchestrator-Workers
+```
+
+See [`patterns/workflows/README.md`](patterns/workflows/README.md) for full diagrams and explanations.
 
 ---
 
